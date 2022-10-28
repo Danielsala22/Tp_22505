@@ -121,7 +121,7 @@ ul li {
     transition: 0.4s;
 }
 
-/* Estilo de los links dentro de la lista */
+
 ul li a {
     display: block;
     text-decoration: none;
@@ -134,33 +134,33 @@ ul li a {
 
 }
 
-/* Al pasar el mouse sobre la LISTA */
+ 
 ul:hover li a {
     transform: scale(1.2);
     opacity: 0.7;
     filter: blur(1px);
 }
 
-/* Al pasar el mouse sobre un LINK dentro de la lista */
+
 ul li a:hover { 
-    transform: scale(1.7);  /* Zoom */
+    transform: scale(1.7); 
     opacity: 1;
     filter: blur(0px);
 }
 
-/* Al ENTRAR con el mouse sobre a link dentro de la lista */
+
 ul li a:before { 
     content: "";
-    position: absolute; /*Respecto de la caja del link*/
+    position: absolute; 
     top: 0px;
     left: 0px;
     background:rgb(85, 244, 122);
-    width: 100%;        /*Respecto de la caja del link*/
-    height: 100%;       /*Respecto de la caja del link*/
+    width: 100%;        
+    height: 100%;       
     transition: 0.4s;
     transform-origin: right;
-    transform: scaleX(1.1);  /* Zoom */
-    z-index: -1;       /* Por detrás del texto del link*/
+    transform: scaleX(1.1);  
+    z-index: -1;      
 }
 
 
@@ -210,19 +210,10 @@ a {
     padding: 10px;
 }
 
-/* Propiedades Flexbox pero de los elementos hijos:
-Estás propiedades las aplicaremos a los div que se encuentran dentro del contenedor padre.
-order:; Ordena los elementos hijos según el número que tu le designes.
-flex-grow:; Especifica el factor de crecimiento de un elemento flexible. Se especifica qué cantidad de espacio debe ocupar el elemento dentro del contenedor flexible. Si todos los elementos tienen flex-grow 1, el espacio restante se distribuye entre los elementos.
-flex-shrink:; Si utilizamos esta propiedad con valor «0» el elemento hijo no podrá hacerse más pequeño que su ancho establecido.
-flex-basis:; Con esta propiedad podemos especificar el tamaño inicial que tendrá un elemento hijo.
-flex:1 1 auto; Es la propiedad resumida de flex-grow, flex-shrink y flex-basis, generalmente se utiliza con la unidad «1 1 auto».
-align-self: auto | flex-start | flex-end | center | baseline | stretch;
-Con aling-self podemos posicionar solo un elemento hijo, generando así diferentes posiciones para cada elemento.
-*/
-header, main, section, aside, footer{
-    flex-grow: 1;     /* Todo crece hasta ocupar el ancho disponible */
-    flex-basis: 100%; /* Tamaño por defecto: 100% */
+
+body, header, main, section, aside, footer{
+    flex-grow: 1;     
+    flex-basis: 100%; 
     padding: 10px;
 }
 
@@ -231,15 +222,14 @@ header, main, section, aside, footer{
 
 @media all and (min-width: 600px){
     .aside {
-        /* flex: <flex-grow> <flex-shrink> <flex-basis> */
-        flex: 1 1 auto; /* <flex-grow> <flex-shrink> <flex-
-        basis>*/
+        
+        flex: 1 1 auto; 
     }
 }
 
 
 @media all and (min-width: 800px){
-    body{flex:2 0;}  /* <flex-grow> <flex-shrink> */
+    body{flex:2 0;}  
     section{order: 1;}
     aside{order: 2;}
     aside{order: 3;}
@@ -250,7 +240,7 @@ footer{
     background-color: lightcyan
    
 }
-main div.imagen-principal, #contacto div.formulario, #taller div.imagen-taller {
+main div.imagen-principal, #contacto div.form, #taller div.imagen-taller {
     display: flex;
     justify-content: space-evenly;
 }
@@ -264,20 +254,20 @@ body {
     width: 100%;    
     margin: 0 auto;
     }
-.formulario {
+.form {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.formulario__label{
+.form__label{
     display: block;
     font-weight: 700;
     padding: 10px;
     cursor: pointer;
 }
-.formulario__grupo-input{
+.form__grupo-input{
     position: relative;
 }
-.formulario__input {
+.form__input {
     width: 100%;
     background: rgb(197, 214, 224);
     border: 3px solid ;
@@ -287,19 +277,19 @@ body {
     padding: 0 40px 0 10px;
     transition: .3s ease all;
 }
-.formulario__input:focus {
+.form__input:focus {
     border: 3px solid blue;
  
 }
-.formulario__input-error {
+.form__input-error {
     font-size: 12px;
     margin-bottom: 0;
     display: none;
 }
-.formulario__input-error-activo {
+.form__input-error-activo {
     display: block;
 }
-.formulario__validacion-estado {
+.form__validacion-estado {
     position: absolute;
     right: 10px;
     bottom: 15px;
@@ -307,11 +297,11 @@ body {
     font-size: 16px;
     opacity: 0;
 }
-.formulario__mensaje,
-.formulario__grupo-btn-enviar {
+.form__mensaje,
+.form__grupo-btn-enviar {
     grid-column: span 2;
 }
-.formulario__mensaje {
+.form__mensaje {
     height: 45px;
     line-height: 45px;
     background: red;
@@ -319,18 +309,18 @@ body {
     border-radius: 3px;
     display: none;
 }
-.formulario__mensaje p {
+.form__mensaje p {
     margin: 0;
 }
-.formulario__mensaje-activo {
+.form__mensaje-activo {
     display: block;
 }
-.formulario__grupo-btn-enviar {
+.form__grupo-btn-enviar {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.formulario__btn {
+.form__btn {
     height: 45px;
     line-height: 45px;
     width: 30%;
@@ -343,14 +333,14 @@ body {
     transition: .1s ease all;
 }
 @media screen and (max-width: 1300px) {
-    .formulario {
+    .form {
         grid-template-columns: 1fr;
  }
- .formulario__mensaje,
- .formulario__grupo-btn-enviar {
+ .form__mensaje,
+ .form__grupo-btn-enviar {
      grid-column: 1;
  }
-.formulario__btn {
+.form__btn {
     width: 100%;
 }
  }
